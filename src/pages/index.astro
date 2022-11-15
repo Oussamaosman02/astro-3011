@@ -34,7 +34,12 @@ const data = await res.json();
   h1 {
     font-size: 3rem;
     font-weight: 800;
-    margin: 0;
+    margin: 0 0 1vh 0;
+    text-shadow: 8px 8px 16px #9d9d9d, -8px -8px 16px #ffffff;
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  h1:hover {
+    text-shadow: none;
   }
   ul {
     width: 100%;
@@ -43,6 +48,7 @@ const data = await res.json();
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+    margin-top: 2vh;
   }
   .lista {
     list-style: none;
