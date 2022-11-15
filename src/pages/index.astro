@@ -1,0 +1,52 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+const res = await fetch("https://3011.site/api/sites");
+const data = await res.json();
+---
+
+<Layout title="30/11">
+  <main>
+    <h1>30/11</h1>
+    <ul>
+      {
+        data.map((dat) => {
+          return (
+            <li class="lista">
+              <Card title={dat.name} body={dat.desc} href={dat.link} />
+            </li>
+          );
+        })
+      }
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  main {
+    width: 90%;
+    margin: 1vh auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .lista {
+    list-style: none;
+    width: fit-content;
+    margin: 3vw 3vw;
+  }
+</style>
