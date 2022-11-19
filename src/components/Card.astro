@@ -8,8 +8,8 @@ export interface Props {
 const { href, title, body } = Astro.props;
 ---
 
-<li class="link-card">
-  <a target="_BLANK" rel="noreferrer noopener" href={href}>
+<li class='link-card'>
+  <a target='_BLANK' rel='noreferrer noopener' href={href}>
     <h2>
       {title}
       <span>&rarr;</span>
@@ -31,7 +31,6 @@ const { href, title, body } = Astro.props;
     background: #e0e0e0;
     margin-bottom: 3vw;
   }
-
   .link-card > a {
     text-decoration: none;
     line-height: 1.4;
@@ -56,5 +55,16 @@ const { href, title, body } = Astro.props;
   }
   .link-card:is(:hover, :focus-within) h2 {
     color: rgb(var(--accent));
+  }
+  @media screen and (max-width: 600px) {
+    .link-card {
+      padding: 0.2vw;
+      border-radius: 7px;
+      box-shadow: 3px 3px 15px -3px #9d9d9d, -3px -3px 15px -3px #ffffff;
+      text-align: center;
+    }
+    .link-card > a {
+      border-radius: 7px;
+    }
   }
 </style>
