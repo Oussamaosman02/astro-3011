@@ -1,18 +1,18 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-const res = await fetch("https://3011.site/api");
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+const res = await fetch('https://3011.site/api');
 const data = await res.json();
 ---
 
-<Layout title="30/11">
+<Layout title='30/11'>
   <main>
     <h1>30/11</h1>
     <ul>
       {
         data.map((dat) => {
           return (
-            <li class="lista">
+            <li class='lista'>
               <Card title={dat.name} body={dat.desc} href={dat.link} />
             </li>
           );
